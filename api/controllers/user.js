@@ -50,7 +50,7 @@ function saveUser(req, res) {
             });
 
             if (users && users.length >= 1) {
-                return res.status(500).send({
+                return res.status(200).send({
                     message: 'El usuario que intenta registrar ya existe!!'
                 });
             } else {
@@ -58,14 +58,14 @@ function saveUser(req, res) {
                 bcrypt.hash(params.contrasena, null, null, (err, hash) => {
                     user.contrasena = hash;
 
-                    user.save((err, userStored) => {
+                    user.save((err, userGuardado) => {
                         if (err) return res.status(500).send({
                             message: 'Error al guardar el usuario'
                         });
 
-                        if (userStored) {
+                        if (userGuardado) {
                             res.status(200).send({
-                                user: userStored
+                                user: userGuardado
                             });
                         } else {
                             res.status(404).send({

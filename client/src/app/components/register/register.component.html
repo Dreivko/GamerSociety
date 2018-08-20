@@ -1,15 +1,51 @@
 <div class="container-fluid">
     <div class="col-6">
-        <h1>{{title}}</h1>
-        <!--<form #registerForm="ngform" (ngSubmit)="onsubmit(registerForm) class=" col-10 ">
+        <h1 class="h1-strong">{{title}}</h1>
+
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Registro completado correctamente,
+            <a [routerLink]="['/login']">Identificate aquí</a>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            El resgistro no ha podido completarse, quizas tu email o nickname ya esta en uso,intentalo de nuevo
+        </div>
+
+        <!--FORMULARIO DE REGISTRO-->
+        <form #registerForm="ngForm" (submit)="onSubmit(registerForm)" class="col-lg-10">
             <div class="form-group ">
-                <label for="exampleFormControlInput1 ">Email address</label>
-                <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="name@example.com ">
-            </div>                    
-            <div class="form-group ">
-                <label for="exampleFormControlInput1 ">Email address</label>
-                <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="name@example.com ">
+                <label for="nombre">Nombres</label>
+                <input type="text " name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control " id="nombre" placeholder="Ingrese su nombres" required>
+                <span *ngIf="!nombre.valid && nombre.touched">Los nombres son obligatorios</span>
             </div>
-        </form>-->
-  </div>
+
+            <div class="form-group ">
+                <label for="apellido">Apellidos</label>
+                <input type="text " name="apellido" #apellido="ngModel" [(ngModel)]="user.apellido" class="form-control " id="apellido" placeholder="Ingrese sus apellidos" required>
+                <span *ngIf="!apellido.valid && apellido.touched">Los apellidos son obligatorios</span>
+            </div>
+
+            <div class="form-group ">
+                <label for="nick">Apodo</label>
+                <input type="text " name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control " id="nick" placeholder="Ingrese su apodo" required>
+                <span *ngIf="!nick.valid && nick.touched">El Apodo es obligatorio</span>
+            </div>
+
+            <div class="form-group ">
+                <label for="email">Correo Electronico</label>
+                <input type="email " pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control " id="email" placeholder="Ingrese su email" required>
+                <span *ngIf="!email.valid && email.touched">El correo electronico no es correcto</span>
+            </div>
+
+            <div class="form-group ">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" class="form-control " id="contrasena" placeholder="Ingrese su contraseña" required>
+                <span *ngIf="!contrasena.valid && contrasena.touched">La contraseña es obligatorio</span>
+            </div>
+
+            <input type="submit" value="{{title}}" class="btn btn-success  btn-lg btn-block" [disabled]="!registerForm.form.valid">
+        </form>
+        <!--FIN DEL FORMULARIO-->
+
+    </div>
 </div>
