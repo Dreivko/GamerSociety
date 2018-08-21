@@ -10,6 +10,10 @@ body {
     font-family: "fuente" !important;
 }
 
+.active {
+    background: #022c58;
+}
+
 
 /*ENCABEZADOS*/
 
