@@ -1,31 +1,43 @@
-<div class="container-fluid">
-    <div class="col-sm-3 col-m-6 col-lg-12">
-        <h1 class="h1-strong">{{title}}</h1>
-
-        <div class="alert alert-success" *ngIf="status == 'success'">
-            Te has identificado correctamente, BIENVENIDO!!
+<div class="main-panel">
+    <div class="container-fluid">
+        <div class="panel-izq col-sm-3 col-m-6 col-lg-12">
+            <h1>GameSociety</h1>
+            <p>The Best Community For Gamers</p>
+            <img src="./client/src/assets/img/locoicono.png">
         </div>
+    </div>
 
-        <div class="alert alert-danger" *ngIf="status == 'error'">
-            No te has podido identificar correctamente!!
-        </div>
 
-        <!--FORMULARIO DE REGISTRO-->
-        <form #loginForm="ngForm" (submit)="onSubmit()" class="col-sm-3 col-m-6 col-lg-12">
-            <div class="form-group ">
-                <label for="email">Correo Electronico</label>
-                <input type="email " pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control " id="email" placeholder="Ingrese su email" required>
-                <span *ngIf="!email.valid && email.touched">El correo electronico no es correcto</span>
+    <div class="container-fluid">
+        <div class="col-sm-3 col-m-6 col-lg-12">
+            <h1 class="h1-strong">{{title}}</h1>
+
+            <div class="alert alert-success" *ngIf="status == 'success'">
+                Te has identificado correctamente, BIENVENIDO!!
             </div>
 
-            <div class="form-group ">
-                <label for="contrasena">Contraseña</label>
-                <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" class="form-control " id="contrasena" placeholder="Ingrese su contraseña" required>
-                <span *ngIf="!contrasena.valid && contrasena.touched">La contraseña es obligatorio</span>
+            <div class="alert alert-danger" *ngIf="status == 'error'">
+                No te has podido identificar correctamente!!
             </div>
 
-            <input type="submit" value="Entrar" class="btn btn-success  btn-lg btn-block" [disabled]="!loginForm.form.valid">
-        </form>
-        <!--FIN DE FORMULARIO-->
+            <!--FORMULARIO DE REGISTRO-->
+            <form #loginForm="ngForm" (submit)="onSubmit()" class="col-sm-3 col-m-6 col-lg-12">
+                <div class="form-group ">
+                    <label for="email">Correo Electronico</label>
+                    <input type="email " pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control input-gs" id="email" placeholder="Ingrese su email / apodo" required>
+                    <span *ngIf="!email.valid && email.touched">El correo electronico no es correcto</span>
+                </div>
+
+                <div class="form-group ">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" class="form-control input-gs" id="contrasena" placeholder="Ingrese su contraseña" required>
+                    <span *ngIf="!contrasena.valid && contrasena.touched">La contraseña es obligatorio</span>
+                </div>
+
+                <input type="submit" value="Entrar" class="btn btn-gs  btn-lg btn-block" [disabled]="!loginForm.form.valid">
+            </form>
+            <!--FIN DE FORMULARIO-->
+        </div>
     </div>
 </div>
+

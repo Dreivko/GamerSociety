@@ -24,6 +24,7 @@ body {
     padding: 15px;
     margin: 15px;
     border-bottom: 1px solid #eee;
+    text-align: center;
 }
 
 
@@ -70,6 +71,12 @@ input {
     margin: 30px 0;
     font-size: 20px;
     font-family: "fuente" !important;
+
+}
+
+.input-gs{
+    background-color: #d5d5d5 !important ;
+    color: white !important;
 }
 
 
@@ -138,4 +145,26 @@ h4 {
 @font-face {
     font-family: "fuente";
     src: url(assets/letra/fuente.ttf) format("truetype");
+}
+
+/*main Panel*/
+.main-panel{
+    display: flex;
+}
+
+/*panel Izq*/
+
+.panel-izq{
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    height: 100%;
+    padding: 10% 0 0 0;
+}
+
+/*Boton general*/
+
+.btn-gs{
+    background-color: #002340;
+    color: white;
 }
