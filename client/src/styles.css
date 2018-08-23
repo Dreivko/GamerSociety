@@ -147,11 +147,6 @@ h4 {
     src: url(assets/letra/fuente.ttf) format("truetype");
 }
 
-/*main Panel*/
-.main-panel{
-    display: flex;
-}
-
 /*panel Izq*/
 
 .panel-izq{

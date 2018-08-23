@@ -1,16 +1,15 @@
-<div class="main-panel">
-    <div class="container-fluid">
-        <div class="panel-izq col-sm-3 col-m-6 col-lg-12">
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="panel-izq col">
             <h1>GameSociety</h1>
             <p>The Best Community For Gamers</p>
             <img src="./client/src/assets/img/locoicono.png">
         </div>
-    </div>
 
-    <div class="container-fluid">
-        <div class="col-sm-3 col-m-6 col-lg-12">
+        <div class="col">
             <h1 class="h1-strong">{{title}}</h1>
-           
+        
                 <div class="alert alert-success" *ngIf="status == 'success'">
                     Registro completado correctamente,
                     <a [routerLink]="['/login']">Identificate aquí</a>
@@ -59,3 +58,4 @@
         </div>
     </div>
 </div>
+
