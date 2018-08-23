@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="col-lg-6">
+    <div class="col-sm-3 col-m-6 col-lg-12">
         <h1 class="h1-strong">{{title}}</h1>
 
         <div class="alert alert-success" *ngIf="status == 'success'">
@@ -11,7 +11,7 @@
         </div>
 
         <!--FORMULARIO DE REGISTRO-->
-        <form #loginForm="ngForm" (submit)="onSubmit()" class="col-lg-12">
+        <form #loginForm="ngForm" (submit)="onSubmit()" class="col-sm-3 col-m-6 col-lg-12">
             <div class="form-group ">
                 <label for="email">Correo Electronico</label>
                 <input type="email " pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control " id="email" placeholder="Ingrese su email" required>

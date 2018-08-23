@@ -95,7 +95,7 @@ input {
 
 
 /*CONFIGURACION DE TAMAÑO DE VENTANA PARA QUE SEA RESPONSIVE*/
-
+/*
 @media (max-width:768px) {
     form {
         width: 95%;
@@ -106,7 +106,7 @@ input {
     form {
         width: 95%;
     }
-}
+}*/
 
 
 /*FINALIZACION DE TAMAÑO DE VENTANA RESPONSIVE*/
