@@ -18,7 +18,7 @@
             </div>
 
             <!--FORMULARIO DE REGISTRO-->
-            <form #loginForm="ngForm" (submit)="onSubmit()" class="col-sm-3 col-m-6 col-lg-12">
+            <form #loginForm="ngForm" (submit)="onSubmit()" class="col">
                 <div class="form-group ">
                     <label for="email">Correo Electronico</label>
                     <input type="email " pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control input-gs" id="email" placeholder="Ingrese su email / apodo" required>

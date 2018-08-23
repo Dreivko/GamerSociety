@@ -20,7 +20,7 @@
                 </div>
         
                 <!--FORMULARIO DE REGISTRO-->
-                <form #registerForm="ngForm" (submit)="onSubmit(registerForm)" class="col-sm-3 col-m-6 col-lg-12">
+                <form #registerForm="ngForm" (submit)="onSubmit(registerForm)" class="col">
                     <div class="form-group ">
                         <label for="nombre">Nombres</label>
                         <input type="text " name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control input-gs" id="nombre" placeholder="Ingrese su nombres" required>
