@@ -157,9 +157,31 @@ h4 {
     padding: 5% 0 0 0;
 }
 
+.logo-img-panel{
+   width: 540px;
+}
+
+
 /*Boton general*/
 
 .btn-gs{
     background-color: #002340;
     color: white;
+}
+
+
+/*Medias Queries*/
+@media (max-width: 925px){
+    .logo-img-panel{
+        width: 360px;
+     }    
+}
+
+@media (max-width: 540px){
+    .logo-img-panel{
+        width: 250px;
+     }
+    .panel-izq{
+        display: none;
+    }    
 }
