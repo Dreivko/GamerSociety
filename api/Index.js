@@ -1,19 +1,19 @@
 'use strict'
 
-// Cargamos el módulo de mongoose para poder conectarnos a MongoDB
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = 3800;
 
+//Conexión a la base de datos
 mongoose.Promise = global.Promise;
-// Usamos el método connect para conectarnos a nuestra base de datos
-mongoose.connect('mongodb://localhost:27017/RedSocialDB', { useNewUrlParser: true })
+mongoose.connect('mongodb://admin:admin123@ds245210.mlab.com:45210/gamersocietydb', { useMongoClient: true })
     .then(() => {
-        console.log('La conexión a MongoDB se ha realizado correctamente!!');
+        console.log("Conexión exitosa con la base de datos rs_denuncias");
 
         //crear servidor
         app.listen(port, () => {
             console.log("Servidor corriendo en http://localhost:3800");
         });
+
     })
     .catch(err => console.log(err));

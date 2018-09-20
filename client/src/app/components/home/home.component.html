@@ -1,0 +1,124 @@
+<div class = "col-lg-8 col-lg-offset-2">
+	<div class="jumbotron">
+		<h1>{{title}}</h1>
+
+		<img src="../../assets/images/logoicono.png" class="logo-img-panel">
+		<h2>La mejor comunidad para jugadores</h2>
+		<br>
+		<h4>Unete a nosotros y forma parte de esta gran comunidad</h4>
+		<br>
+
+		<hr>
+		<p *ngIf="identity">
+			<a [routerLink]="['/perfil', identity._id]" class="btn btn-gs btn-lg" role="button" *ngIf="identity.role=='ROLE_USER'">
+				Mi Perfil
+			</a>
+			<a [routerLink]="['/timeline']" [routerLinkActive]="['active']" class="btn btn-gs btn-lg" role="button" *ngIf="identity.role=='ROLE_USER'">
+				Muro
+			</a>
+			<a [routerLink]="['/gente']" [routerLinkActive]="['active']" class="btn btn-gs btn-lg" role="button" *ngIf="identity.role=='ROLE_USER'">
+				Gente
+			</a>
+		</p>
+	</div>
+</div>
+
+
+
+<div class="col-lg-10 col-lg-offset-1 row">
+	<h1 class="h1-strong-3">Algunos Generos</h1>
+	
+	<div class="sub-center-panel">
+		<div class="sub-center-panel-section col-lg-4">
+			<h2>Retro</h2>
+			<p>Los mejores juegos retro</p>
+			<img src="../../assets/images/arcade.jpg" width="300px">
+		</div>
+		<div class="sub-center-panel-section col-lg-4">
+			<h2>PC</h2>
+			<p>El mejor Hardware</p>
+			<img src="../../assets/images/pc.jpg" width="300px">
+		</div>
+		<div class="sub-center-panel-section col-lg-4">
+			<h2>Consolas</h2>
+			<p>Los mejores estrenos</p>
+			<img src="../../assets/images/consoles.jpg" width="300px">
+		</div>
+	</div>
+</div>
+
+
+<div class="col-lg-10 col-lg-offset-1">
+    <h1 class="h1-strong-3">Tendencias</h1>
+    
+    <div class="sub-center-panel">
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#PS4</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#Retrogames</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#Speedrunner</h2>
+        </div>
+    </div>
+
+    <div class="sub-center-panel">
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#XboxOne</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#NewVsOld</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#Tetris</h2>
+        </div>
+    </div>
+
+    <div class="sub-center-panel">
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#Fornite</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#LeagueOfLegends</h2>
+        </div>
+        <div class="sub-center-panel-section col-lg-4">
+            <h2>#OverWatch</h2>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-10 col-lg-offset-1">
+        <h1 class="h1-strong-3">Desarrolladores</h1>
+        <div class="sub-center-panel">
+			<div class="sub-center-panel-section col-lg-4">
+				<img class="dev-img" src="../../assets/images/user.png" >
+				<h2>Carlos</h2>
+				<p>Scrum Master</p>
+			</div>
+			<div class="sub-center-panel-section col-lg-4">
+				<img class="dev-img" src="../../assets/images/user.png" width="100px">
+				<h2>Sergio</h2>
+				<p>Back End</p>
+			</div>
+			<div class="sub-center-panel-section col-lg-4">
+				<img class="dev-img" src="../../assets/images/user.png" width="100px">
+				<h2>Sebastian</h2>
+				<p>Front End</p>
+			</div>
+		</div>
+		<div class="sub-center-panel">
+			<div class="sub-center-panel-section col-lg-6">
+				<img class="dev-img" src="../../assets/images/user.png" width="100px">
+				<h2>Brenda</h2>
+				<p>Front End</p>
+		</div>
+		<div class="sub-center-panel-section col-lg-6">
+			<img class="dev-img" src="../../assets/images/user.png" width="100px">
+			<h2>Esteban</h2>
+			<p>Pruebas</p>
+
+		</div>
+
+    </div>    
+</div>

@@ -1,14 +1,15 @@
 'use strict'
 
-var mongose = require('mongoose');
-var Schema = mongose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-//modelo publicacion
 var PublicationSchema = Schema({
-    usuario: { type: Schema.ObjectId, ref: 'User' },
-    texto: String,
-    archivo: String,
-    creado_el: String,
+	text: String,
+	file: String,
+	created_at: String,
+	user: { type: Schema.ObjectId, ref: 'User' },
+	feedback: [String],
+	nofeedback: [String]
 });
 
-module.exports = mongose.model('Publication', PublicationSchema);
+module.exports = mongoose.model('Publication', PublicationSchema);

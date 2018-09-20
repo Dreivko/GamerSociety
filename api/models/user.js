@@ -1,18 +1,16 @@
 'use strict'
 
-//variables de las librerias para la creacion de modelos
-var mongose = require('mongoose');
-var Schema = mongose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-//modelo usuario
 var UserSchema = Schema({
-    nombre: String,
-    apellido: String,
-    nick: String,
-    email: String,
-    contrasena: String,
-    rol: String,
-    imagen: String
+	name: String,
+	surname: String,
+	nick: String,
+	email: String,
+	password: String,
+	role: String,
+	image: String
 });
 
-module.exports = mongose.model('User', UserSchema);
+module.exports = mongoose.model('User',UserSchema);

@@ -1,0 +1,72 @@
+<div class="col-lg-8">
+
+	<div class="people">
+		<!--LISTADO-->
+		<div *ngFor="let user of users" class="item-user">
+			<div class="panel panel-default" *ngIf="user._id != identity._id">
+				<div class="panel-body">
+					<div class="image-user pull_left">
+						<a [routerLink]="['/perfil', user._id]">
+							<img src ="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image" />
+							<img src ="assets/images/user.png" class="avatar-default" *ngIf="!user.image" />
+						</a>
+					</div>
+					<div class="user-name">
+						<p class="name-surname">
+							<a [routerLink]="['/perfil', user._id]">
+								{{user.name + ' ' +user.surname}}
+							</a>
+						</p>
+						<p class="nickname">
+							{{user.nick}}
+						</p>
+                    </div>
+                    
+
+                    <!--Bloquear y desbloquear -->
+					<div class="pull-right" *ngIf="user._id != identity._id">
+						<button class="btn btn-danger" *ngIf="user.role == 'ROLE_USER'" (click)="blockUser(user)" >
+							<span class="glyphicon glyphicon-minus-sign"> </span> Bloquear
+						</button>
+						<button class="btn btn-secondary" 
+						*ngIf="user.role == 'ROLE_BLOCKED'"
+						(mouseenter)="mouseEnter(user._id)"
+						(mouseleave)="mouseLeave(user._id)"
+						(click)="unBlockUser(user)"
+						[class.btn-primary]="user._id == userOver" 
+						>
+							<span *ngIf="user._id == userOver; else blocked">
+								<span class="glyphicon glyphicon-plus-sign" > </span> 
+								Desbloquear
+							</span>
+							<ng-template #blocked> 
+								<span class="glyphicon "> </span> 
+								Bloqueado
+							</ng-template>
+							
+						</button>
+					</div>
+                    
+                    
+
+
+				</div>
+			</div>
+
+		</div>	
+
+		<!--PGINACION-->
+
+		<ul class="pagination pull-right">
+			<li *ngIf="page > 1">
+				<a [routerLink]="['/admin/admin-users', prev_page]">Anterior</a>				
+			</li>
+			<li *ngIf="pages != page">
+				<a [routerLink]="['/admin/admin-users', next_page]">Siguiente</a>				
+			</li>	
+		</ul>	
+
+	</div>
+
+</div>
+<div class="clearfix"></div>

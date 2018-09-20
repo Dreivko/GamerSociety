@@ -1,12 +1,11 @@
 'use strict'
 
-var mongose = require('mongoose');
-var Schema = mongose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-//modelo publicacion
-var FollowSchema = Schema({
-    usuario: { type: Schema.ObjectId, ref: 'User' },
-    seguido: { type: Schema.ObjectId, ref: 'User' }
+var FollowSchema = Schema({	
+	user: { type: Schema.ObjectId, ref: 'User' },
+	followed: { type: Schema.ObjectId, ref: 'User' }
 });
 
-module.exports = mongose.model('Follow', FollowSchema);
+module.exports = mongoose.model('Follow',FollowSchema);
